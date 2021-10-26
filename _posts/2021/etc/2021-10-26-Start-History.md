@@ -1,9 +1,17 @@
 ---
 title: Start History
+layout: single
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
+popular: true
+categories:
 ---
 
-주니어이었을때는 곧 잘 기록을 하고는 했는데
+Hello First Post!!!
 
-시니어로 가고있는 지금에서는 게을러져서 다시 한번 마음을 다잡기위해
+첫 번째 포스팅입니다.
 
-기록용 블로그를 생성합니다.
+
