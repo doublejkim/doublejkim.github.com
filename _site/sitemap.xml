@@ -5,6 +5,14 @@
 <lastmod>2021-10-26T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/linux/Minidlna-troubleshooting1/</loc>
+<lastmod>2021-10-28T02:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/db/transaction_acid1/</loc>
+<lastmod>2021-12-09T12:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -18,5 +26,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/posts/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/googleccf154323a1e09e1.html</loc>
+<lastmod>2021-11-27T22:09:53+09:00</lastmod>
 </url>
 </urlset>

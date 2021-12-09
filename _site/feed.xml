@@ -1,3 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-27T00:16:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DoubleJ’s World</title><subtitle>An amazing website.</subtitle><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><entry><title type="html">Start History</title><link href="http://localhost:4000/Start-History/" rel="alternate" type="text/html" title="Start History" /><published>2021-10-26T00:00:00+09:00</published><updated>2021-10-26T00:00:00+09:00</updated><id>http://localhost:4000/Start-History</id><content type="html" xml:base="http://localhost:4000/Start-History/">&lt;p&gt;Hello First Post!!!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-09T12:06:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DoubleJ’s World</title><subtitle>An amazing website.</subtitle><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><entry><title type="html">트랜잭션에서의 ACID</title><link href="http://localhost:4000/db/transaction_acid1/" rel="alternate" type="text/html" title="트랜잭션에서의 ACID" /><published>2021-12-09T00:00:00+09:00</published><updated>2021-12-09T12:00:00+09:00</updated><id>http://localhost:4000/db/transaction_acid1</id><content type="html" xml:base="http://localhost:4000/db/transaction_acid1/">&lt;h1 id=&quot;트랜잭션-acid&quot;&gt;트랜잭션 ACID&lt;/h1&gt;
+
+&lt;h3 id=&quot;트랜잭션-transaction&quot;&gt;트랜잭션 (Transaction)&lt;/h3&gt;
+
+&lt;p&gt;트랜잭션이란 질의(query)를 하나의 묶음으로 처리하도록하는 작업수행의 논리적 단위 입니다.&lt;/p&gt;
+
+&lt;p&gt;트랜잭션은 ACID(원자성, 일관성, 독립성, 지속성)라는 특성을 만족해야합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;원자성-atomicity&quot;&gt;원자성 (Atomicity)&lt;/h3&gt;
+
+&lt;p&gt;트랜잭션의 작업이 부분적으로 실행되거나 중단되지 않음을 보장하는 특성입니다.&lt;/p&gt;
+
+&lt;p&gt;흔히 All or Nothing 이라고 부르는 개념으로 작업단위를 일부분만 실행하지 않고 실행이 되지 않는 상황이면 아무것도 실행되지 않아야하며 실행이 되었다면 실행되어야하는 영역(트랜잭션영역)은 모두 실행되어야 하는 특성입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;일관성-consistency&quot;&gt;일관성 (Consistency)&lt;/h3&gt;
+
+&lt;p&gt;트랜잭션이 실행을 성공적으로 완료하면 언제나 일관성 있는 데이터 베이스를 유지하는 것을 의미합니다.&lt;/p&gt;
+
+&lt;p&gt;일관성이라는 특성은 여러가지 상황에 대한 일관성을 함축적으로 표현하는 특성입니다.&lt;/p&gt;
+
+&lt;p&gt;무결성 제약이 존재한다면 어느 트랜잭션은 무결성 제약이 적용되고 또 어떤 트랜잭션은 무결성제약이 적용되지 않고 하는 상황이 생기지 않아야하는 경우나, 고객의 잔고를 표현하는 데이터타입이 정수형이라면 예외적인 트랜잭션이 없이 모든 트랜잭션이 정수형으로 사용해야하는 경우 등 , 일반적으로 RDBMS 에서 언급되는 제약들은 모두 일관성 있게 적용되어야한다는 특성입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;독립성-isolation&quot;&gt;독립성 (Isolation)&lt;/h3&gt;
+
+&lt;p&gt;고립성, 격리성 이라고도 부르는 이 특성은 모든 트랜잭션은 다른 트랜잭션으로 부터 독립 되어야 한다는 특성입니다.&lt;/p&gt;
+
+&lt;p&gt;트랜잭션 작업 수행 중에는 다른 트랜잭션에 영향을 주어서도 안되며, 다른 트랜잭션들에 의해서 간섭을 받아서도 안됩니다. 영향을 받게 된다면 전혀 다른 동작이 이루어 질 수 도 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;지속성-durability&quot;&gt;지속성 (Durability)&lt;/h3&gt;
+
+&lt;p&gt;성공적으로 수행된 트랜잭션은 영원히 반영되어야함을 의미합니다. 트랜잭션이 성공적으로 수행되었다면 해당 트랜잭셔에 대한 로그까지 남아야하며 만약 시스템 오류가 발생하더라도 해당 기록은 영구적으로 기록되어야 있어야 합니다. 즉, commit 이 완료되었다면 commit 도중 시스템 오류가 발생했더라도 작업 완료에 대한 기록은 남아있어야하며 이를 기반으로 데이터 자체는 정상적으로 유지되어야 합니다.&lt;/p&gt;</content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><category term="db" /><summary type="html">트랜잭션 ACID</summary></entry><entry><title type="html">miniDLNA 구동 후 접속 기기에서 파일이 보이지 않을경우</title><link href="http://localhost:4000/linux/Minidlna-troubleshooting1/" rel="alternate" type="text/html" title="miniDLNA 구동 후 접속 기기에서 파일이 보이지 않을경우" /><published>2021-10-27T00:00:00+09:00</published><updated>2021-10-28T02:00:00+09:00</updated><id>http://localhost:4000/linux/Minidlna-troubleshooting1</id><content type="html" xml:base="http://localhost:4000/linux/Minidlna-troubleshooting1/">&lt;h3 id=&quot;minidlna-&quot;&gt;miniDLNA ?&lt;/h3&gt;
+
+&lt;p&gt;손쉽게 미디어 서버를 구축할 수 있는 miniDLNA 라는 서버가 있으며, DLNA/UPnP 를 지원하는 스마트 TV 나 그에 대응되는 기기가 있을 경우 동일 네트워크 상에서 손쉽게 영상 플레이 등이 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;현재 이문서는 miniDLNA 설치를 다루지는 않으며, 파일이 보이지 않을경우의 트러블 슈팅만 언급하겠습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;파일이-보이지-않을-경우에는-status-확인&quot;&gt;파일이 보이지 않을 경우에는 status 확인&lt;/h3&gt;
+
+&lt;p&gt;miniDLNA 명령어 옵션 중 Status  를 확인할 수 있는 status 옵션이 있습니다. 해당 옵션으로 실행 하면 miniDLNA 의 상태를 확인 할 수 있습니다. (service minidlna status)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2021/20211027_minidlna1.png&quot; alt=&quot;minidlna status&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;파일이 보이지 않을 경우에 고려해봐야할 점은 네트워크 설정, miniDLNA 구동 여부 등을 먼저 확인해봐야하지만 위의 경우에는 동영상 파일이 존재하는 위치의 디렉토리의 권한 접근 문제가 발생하여 에러가 발생하고 있는 중 입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;권한-설정-변경&quot;&gt;권한 설정 변경&lt;/h3&gt;
+
+&lt;p&gt;해당 디렉토리의 권한을 chmod 명령어로 변경해도 무방할 것으로 보이나, 여기서는 miniDLNA 데몬의 실행시 권한을 변경할 것 입니다.&lt;/p&gt;
+
+&lt;p&gt;흔히 포트나 영상파일이 존재하는 미디어 디렉토리를 설정하는 /etc/minidlna.conf 설정 파일 외에 miniDLNA 구동시 참조하는 초기 스크립트 관련 파일이 존재하는데 해당 파일에서 USER 와 GROUP 으로 표시되어있는 실행권한을 root 로 변경합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;sudo vi /etc/minidlna&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2021/20211027_minidlna2.png&quot; alt=&quot;minidlna init config&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;설정 변경 후 minidlna 을 재시작 한후 status 를 확인하면 다음과 같이 정상적으로 실행 중임을 알 수 있으며, 동일네트워크의 DLNA 을 접근할 수 있는 기기를 확인하면 미디어 디렉토리에 존재하는 동영상을 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2021/20211027_minidlna3.png&quot; alt=&quot;minidlna result&quot; /&gt;&lt;/p&gt;</content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><category term="linux" /><summary type="html">miniDLNA ?</summary></entry><entry><title type="html">Start History</title><link href="http://localhost:4000/Start-History/" rel="alternate" type="text/html" title="Start History" /><published>2021-10-26T00:00:00+09:00</published><updated>2021-10-26T00:00:00+09:00</updated><id>http://localhost:4000/Start-History</id><content type="html" xml:base="http://localhost:4000/Start-History/">&lt;p&gt;Hello First Post!!!&lt;/p&gt;
 
 &lt;p&gt;첫 번째 포스팅입니다.&lt;/p&gt;</content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><summary type="html">Hello First Post!!!</summary></entry></feed>
