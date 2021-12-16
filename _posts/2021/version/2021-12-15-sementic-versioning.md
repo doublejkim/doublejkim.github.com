@@ -26,10 +26,10 @@ last_modified_at: '2021-12-15 18:00:00 +0800'
 
 버전 관리에 대한 정의를 확인하던 중 Semantic Versioning 이라는 Spec 이 존재하는 것을 확인하여 요약을 하였다. 스펙이라고하면 거창할지 모르지만 결국 모든 스펙은 체계적으로 잘 구축해보자는 것이 목표이다. 이미 훌륭한 분이 [Semantic Versioning](https://semver.org/) 이라고하는 권고 스펙을 정의를 해두었다. [Semantic Versioning](https://semver.org/) 은 그라바타(Gravatars)의 창시자이자 깃헙(GitHub)의 공동창업자인 [톰 프레스턴-베르너](https://tom.preston-werner.com) 가 작성했으며, 흔히 오픈소스에서 사용하는 버전 체계의 기준이 되고 있다.
 
-## 2. Sementic Versioning 의 포맷
+## 2. Semantic Versioning 의 포맷
 
 ![sementic versioning format]({{site.baseurl}}/assets/images/posts/2021/20211215_semver1.png)
-흔히 볼 수 있는 버전 표기의 형태는 위와 같다. x, y, z 는 증가하는 자연수(음이 아닌 정수)형태로 표시되며, 절대로 0이 앞에 붙어서는 안된다(예: 1.0.03 과 같은 버전 표기는 하지 말아야한다). 
+흔히 볼 수 있는 버전 표기의 형태는 위와 같다. x, y, z 는 증가하는 자연수(음이 아닌 정수)형태로 표시되며, 절대로 0이 앞에 붙어서는 안된다 (예: 1.0.03 과 같은 버전 표기는 하지 말아야한다). 
 그리고 위에서 표시된 **x, y, z 는 각각 Major, Minor, Patch 의 버전을 의미한다.**
 
 ### 2.1. Major
