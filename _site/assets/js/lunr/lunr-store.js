@@ -16,6 +16,6 @@ var store = [{
         "teaser":null},{
         "title": "버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)",
         "excerpt":"1. 버전 네이밍 기준 버전 관리에 대한 정의를 확인하던 중 Semantic Versioning 이라는 Spec 이 존재하는 것을 확인하여 요약을 하였다. 스펙이라고하면 거창할지 모르지만 결국 모든 스펙은 체계적으로 잘 구축해보자는 것이 목표이다. 이미 훌륭한 분이 Semantic Versioning 이라고하는 권고 스펙을 정의를 해두었다. Semantic Versioning 은 그라바타(Gravatars)의 창시자이자 깃헙(GitHub)의 공동창업자인 톰 프레스턴-베르너...","categories": ["version"],
-        "tags": [],
+        "tags": ["version"],
         "url": "http://localhost:4000/version/sementic-versioning/",
         "teaser":null}]
