@@ -1,0 +1,687 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer) | DoubleJ’s World</title>
+<meta name="description" content="버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)">
+
+
+  <meta name="author" content="Jaejin Kim">
+  
+  <meta property="article:author" content="Jaejin Kim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="DoubleJ's World">
+<meta property="og:title" content="버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)">
+<meta property="og:url" content="http://localhost:4000/version/sementic-versioning/">
+
+
+  <meta property="og:description" content="버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-12-15T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-12-15T19:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/version/sementic-versioning/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jaejin Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="DoubleJ's World Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          DoubleJ's World
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">연도별 포스트</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#version" itemprop="item"><span itemprop="name">Version</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/profile/jjkim.jpg" alt="Jaejin Kim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Jaejin Kim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>IT.. Development.. blah..blah..</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="https://doublejkim.github.io" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="https://www.facebook.com/jaejin.km" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i><span class="label">Facebook</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/doublejkim" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:jaejin.km@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="jaejin.km@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)">
+    <meta itemprop="description" content="1. 버전 네이밍 기준">
+    <meta itemprop="datePublished" content="2021-12-15T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-12-15T19:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/version/sementic-versioning/" class="u-url" itemprop="url">버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#1-버전-네이밍-기준">1. 버전 네이밍 기준</a></li><li><a href="#2-sementic-versioning-의-포맷">2. Sementic Versioning 의 포맷</a><ul><li><a href="#21-major">2.1. Major</a></li><li><a href="#22-minor">2.2. Minor</a></li><li><a href="#23-patch">2.3. Patch</a></li><li><a href="#24-pre-release-와-build">2.4. Pre-Release 와 Build</a></li></ul></li><li><a href="#semver-규칙을-확인-할-수-있는-정규-표현식">SemVer 규칙을 확인 할 수 있는 정규 표현식</a></li><li><a href="#참고자료">참고자료</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="1-버전-네이밍-기준">1. 버전 네이밍 기준</h2>
+
+<p>버전 관리에 대한 정의를 확인하던 중 Semantic Versioning 이라는 Spec 이 존재하는 것을 확인하여 요약을 하였다. 스펙이라고하면 거창할지 모르지만 결국 모든 스펙은 체계적으로 잘 구축해보자는 것이 목표이다. 이미 훌륭한 분이 <a href="https://semver.org/">Semantic Versioning</a> 이라고하는 권고 스펙을 정의를 해두었다. <a href="https://semver.org/">Semantic Versioning</a> 은 그라바타(Gravatars)의 창시자이자 깃헙(GitHub)의 공동창업자인 <a href="https://tom.preston-werner.com">톰 프레스턴-베르너</a> 가 작성했으며, 흔히 오픈소스에서 사용하는 버전 체계의 기준이 되고 있다.</p>
+
+<h2 id="2-sementic-versioning-의-포맷">2. Sementic Versioning 의 포맷</h2>
+
+<p><img src="/assets/images/posts/2021/20211215_semver1.png" alt="sementic versioning format" />
+흔히 볼 수 있는 버전 표기의 형태는 위와 같다. x, y, z 는 증가하는 자연수(음이 아닌 정수)형태로 표시되며, 절대로 0이 앞에 붙어서는 안된다(예: 1.0.03 과 같은 버전 표기는 하지 말아야한다). 
+그리고 위에서 표시된 <strong>x, y, z 는 각각 Major, Minor, Patch 의 버전을 의미한다.</strong></p>
+
+<h3 id="21-major">2.1. Major</h3>
+
+<p><strong>프로그램의 기능적 변경이 이전 버전과 호환되지 않을 경우 Major 버전을 증가시킨다.</strong> Major 버전이 증가된 경우에는  Minor와 Patch 버전은 0으로 리셋시켜야 한다. 예를들어 현재 프로그램의 버전이 1.2.5 이고 다음 버전이 현재버전과 호환되지 않는 기능적 추가나 변경이 일어났다면 새버전은 2.0.0 이 되어야 한다.</p>
+
+<h3 id="22-minor">2.2. Minor</h3>
+
+<p><strong>프로그램이 이전 버전과 호환에 문제가 없는 상태에서 프로그램의 기능적 변경이나 추가가 이루어질 경우 Minor 버전을 증가시킨다</strong>. 예를들어 현재 프로그램의 버전이 1.2.5 이고 다음 버전이 현재버전과 호환되는 상태에서 기능적 추가나 변경이 일어났다면 새버전은 1.3.0 이 되어야 한다.</p>
+
+<h3 id="23-patch">2.3. Patch</h3>
+
+<p>프로그램이 <strong>이전 버전과 호환에 문제가 없는 상태에서 Bug fix 등을 위한 변경이 이루어질 경우 Patch 버전을 증가</strong>시킨다.</p>
+
+<h3 id="24-pre-release-와-build">2.4. Pre-Release 와 Build</h3>
+
+<p>Patch 버전 뒤에 프로그램의 Pre-release label 이나 Build number 같은 메타데이터를 위한 정보를 추가적으로 표시할 수 있다. 예를들어 <em>1.0.0-alpha.1</em> 이라고 표시된 버전의 경우 라면, 1.0.0 버전의 정식 배포를 앞둔 버전이며 내부적으로 alpha.1 이라고 라벨링 했다는 것을 알 수 있다.</p>
+
+<p>Build metadata 는 Patch 버전 뒤에 더하기(+) 기호를 붙인 뒤에 마침표로 구분된 식별자를 덧붙여서 표현한다. 필요하다면 간단한 단어를 표기할 수 있다. (예 : 1.0.0-beta+exp.sha.5114f85)</p>
+
+<p>참고로 Build metadata 는 우선순위에 영향을 주지 않는다.</p>
+
+<h2 id="semver-규칙을-확인-할-수-있는-정규-표현식">SemVer 규칙을 확인 할 수 있는 정규 표현식</h2>
+
+<p><a href="https://semver.org/">semver.org</a> 의 하단부 FAQ 에 보면 Sementic Versioning 에서 권고하는 규칙에 맞는 버전포맷인지 확인 할 수 있는 정규표현식과 링크를 볼 수 있으므로 관심이 있다면 참고해보자.</p>
+
+<p>Capture Group 명을 지원하는경우 (major, minor, patch…)
+<a href="https://regex101.com/r/Ly7O1x/3/">https://regex101.com/r/Ly7O1x/3/</a></p>
+
+<pre><code class="language-regex">^(?P&lt;major&gt;0|[1-9]\d*)\.(?P&lt;minor&gt;0|[1-9]\d*)\.(?P&lt;patch&gt;0|[1-9]\d*)(?:-(?P&lt;prerelease&gt;(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P&lt;buildmetadata&gt;[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+</code></pre>
+
+<p>Capture Group 명을 지원하지 않는 경우</p>
+
+<p><a href="https://regex101.com/r/vkijKf/1/">https://regex101.com/r/vkijKf/1/</a></p>
+
+<pre><code class="language-regex">^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+</code></pre>
+
+<h2 id="참고자료">참고자료</h2>
+
+<ul>
+  <li>
+    <p><a href="https://semver.org/">https://semver.org/</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.baeldung.com/cs/semantic-versioning">https://www.baeldung.com/cs/semantic-versioning</a></p>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#version" class="page__taxonomy-item p-category" rel="tag">version</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-12-15">December 15, 2021</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EB%B2%84%EC%A0%84+%ED%91%9C%EC%8B%9C%EB%8F%84+%EC%8A%A4%ED%8E%99%EC%9D%B4+%EC%9E%88%EC%9D%84%EA%B9%8C%3F+-+Sementic+Versioning+%28SemVer%29%20http%3A%2F%2Flocalhost%3A4000%2Fversion%2Fsementic-versioning%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fversion%2Fsementic-versioning%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fversion%2Fsementic-versioning%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/db/transaction_acid1/" class="pagination--pager" title="트랜잭션에서의 ACID
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/db/transaction_acid1/" rel="permalink">트랜잭션에서의 ACID
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">트랜잭션 ACID
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/linux/Minidlna-troubleshooting1/" rel="permalink">miniDLNA 구동 후 접속 기기에서 파일이 보이지 않을경우
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">miniDLNA ?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Start-History/" rel="permalink">Start History
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Hello First Post!!!
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Jaejin Kim. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/version/sementic-versioning/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/version/sementic-versioning"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://doublejkim.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
