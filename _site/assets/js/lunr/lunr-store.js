@@ -18,4 +18,9 @@ var store = [{
         "excerpt":"1. 버전 네이밍 기준 버전 관리에 대한 정의를 확인하던 중 Semantic Versioning 이라는 Spec 이 존재하는 것을 확인하여 요약을 하였다. 스펙이라고하면 거창할지 모르지만 결국 모든 스펙은 체계적으로 잘 구축해보자는 것이 목표이다. 이미 훌륭한 분이 Semantic Versioning 이라고하는 권고 스펙을 정의를 해두었다. Semantic Versioning 은 그라바타(Gravatars)의 창시자이자 깃헙(GitHub)의 공동창업자인 톰 프레스턴-베르너...","categories": ["version"],
         "tags": ["version"],
         "url": "http://localhost:4000/version/sementic-versioning/",
+        "teaser":null},{
+        "title": "Java8 Functional Interface",
+        "excerpt":"1. 함수형 인터페이스 (Functional Interface) 1.1. Java 에서의 Functional Interface SAM(Single Abstract Method) 인 Interface 는 모두 Functional Interface 이다. 즉, 추상메소드를 딱 하나만 가지고 있는 인터페이스를 의미한다. (Object 클래스로부터 상속 받은 메소드는 제외한다.) 위 의 조건을 만족하는 인터페이스는 Functional Interface 로 인지되며, 람다 표현식에 적용이 가능하다. 만약 Functional Interface...","categories": ["java"],
+        "tags": ["java"],
+        "url": "http://localhost:4000/java/java8-functional-interface/",
         "teaser":null}]
