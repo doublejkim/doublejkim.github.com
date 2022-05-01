@@ -21,6 +21,6 @@ var store = [{
         "teaser":null},{
         "title": "Java8 Functional Interface",
         "excerpt":"1. 함수형 인터페이스 (Functional Interface) 1.1. Java 에서의 Functional Interface SAM(Single Abstract Method) 인 Interface 는 모두 Functional Interface 이다. 즉, 추상메소드를 딱 하나만 가지고 있는 인터페이스를 의미한다. (Object 클래스로부터 상속 받은 메소드는 제외한다.) 위 의 조건을 만족하는 인터페이스는 Functional Interface 로 인지되며, 람다 표현식에 적용이 가능하다. 만약 Functional Interface...","categories": ["java"],
-        "tags": ["java"],
+        "tags": ["java","java8"],
         "url": "http://localhost:4000/java/java8-functional-interface/",
         "teaser":null}]

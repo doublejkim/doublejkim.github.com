@@ -373,8 +373,8 @@
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@FunctionalInterface</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Blah</span> <span class="o">{</span>
-	<span class="kt">void</span> <span class="nf">test</span><span class="o">();</span>
-	<span class="o">...</span>
+    <span class="kt">void</span> <span class="nf">test</span><span class="o">();</span>
+    <span class="o">...</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
@@ -383,6 +383,7 @@
 <h3 id="functiont-r">Function&lt;T, R&gt;</h3>
 
 <p>파라미터 1개, 리턴 1개 형태의 apply() 형태의 SAM 표현</p>
+
 <ul>
   <li>T : 입력값 타입</li>
   <li>R : 리턴값 타입</li>
@@ -403,6 +404,7 @@
 <h3 id="bifunctiont-u-r">BiFunction&lt;T, U, R&gt;</h3>
 
 <p>파라미터 2개, 리턴 1개 형태의 apply() 형태의 SAM 표현</p>
+
 <ul>
   <li>T : 첫 번째 입력값 타입</li>
   <li>U : 두 번째 입력값 타입</li>
@@ -416,7 +418,7 @@
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">BiFunction</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">func1</span> <span class="o">=</span> <span class="o">(</span><span class="n">val1</span><span class="o">,</span> <span class="n">val2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">val1</span> <span class="o">*</span> <span class="n">val2</span><span class="o">;</span>  
 <span class="nc">Function</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">func2</span> <span class="o">=</span> <span class="o">(</span><span class="n">val1</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">val1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>  
-  
+
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">func1</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">)</span> <span class="o">);</span>  <span class="c1">// 6</span>
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">func1</span><span class="o">.</span><span class="na">andThen</span><span class="o">(</span><span class="n">func2</span><span class="o">).</span><span class="na">apply</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">));</span> <span class="c1">// 7</span>
 </code></pre></div></div>
@@ -425,6 +427,7 @@
 
 <p>파라미터 1개, 리턴값은 없는 accept() 형태의 SAM 표현.
 파라미터를 전달받아 소비해버리는 이미지임</p>
+
 <ul>
   <li>T : 입력 값 타입</li>
 </ul>
@@ -433,7 +436,7 @@
 </code></pre></div></div>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Consumer</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">supplier</span> <span class="o">=</span> <span class="o">(</span><span class="n">val</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"val : "</span> <span class="o">+</span> <span class="n">val</span><span class="o">);</span>  
-  
+
 <span class="n">supplier</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="s">"Jack"</span><span class="o">);</span>  <span class="c1">// val : Jack</span>
 </code></pre></div></div>
 
@@ -441,6 +444,7 @@
 
 <p>파라미터는 없고, 리턴값만 존재하는 get() 형태의 SAM 표현
 무언가를 제공해주는 이미지임</p>
+
 <ul>
   <li>T : 리턴 타입</li>
 </ul>
@@ -449,22 +453,22 @@
 </code></pre></div></div>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.function.Supplier</span><span class="o">;</span>  
-  
+
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>  
-  
+
     <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>  
-  
+
     <span class="kd">protected</span> <span class="nf">Foo</span><span class="o">()</span> <span class="o">{}</span>  
     <span class="kd">public</span> <span class="nf">Foo</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span><span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span> <span class="o">}</span>  
-  
+
     <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">;</span> <span class="o">}</span>  
-  
+
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>  
-          
+
         <span class="nc">Supplier</span><span class="o">&lt;</span><span class="nc">Foo</span><span class="o">&gt;</span> <span class="n">supplier</span> <span class="o">=</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">Foo</span><span class="o">(</span><span class="s">"guest"</span><span class="o">);</span>  
         <span class="nc">Foo</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">supplier</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>  
         <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">foo</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>  <span class="c1">// guest</span>
-  
+
     <span class="o">}</span>  
 <span class="o">}</span>
 </code></pre></div></div>
@@ -473,6 +477,7 @@
 
 <p>파라미터는 1개, 리턴값은 boolean. test() 형태의 SAM 표현 
 무언가의 판단(true/false) 의 근거가 되는 값을 판정(test) 해 주는 이미지임.</p>
+
 <ul>
   <li>T : 입력 값 타입</li>
 </ul>
@@ -495,10 +500,10 @@
 </blockquote>
 
 <hr />
+
 <p>https://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html#jls-9.8</p>
 
 <p>https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html</p>
-
 
         
       </section>
@@ -515,7 +520,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">java</a>
+      <a href="/tags/#java" class="page__taxonomy-item p-category" rel="tag">java</a><span class="sep">, </span>
+    
+      <a href="/tags/#java8" class="page__taxonomy-item p-category" rel="tag">java8</a>
     
     </span>
   </p>
