@@ -1,259 +1,259 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-01T23:26:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DoubleJ’s World</title><subtitle>An amazing website.</subtitle><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><entry><title type="html">Java8 Functional Interface</title><link href="http://localhost:4000/java/java8-functional-interface/" rel="alternate" type="text/html" title="Java8 Functional Interface" /><published>2022-04-07T00:00:00+09:00</published><updated>2022-04-07T01:50:00+09:00</updated><id>http://localhost:4000/java/java8-functional-interface</id><content type="html" xml:base="http://localhost:4000/java/java8-functional-interface/">&lt;h1 id=&quot;1-함수형-인터페이스-functional-interface&quot;&gt;1. 함수형 인터페이스 (Functional Interface)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-10T10:23:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">DoubleJ’s World</title><subtitle>An amazing website.</subtitle><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><entry><title type="html">Java8 Functional Interface</title><link href="http://localhost:4000/java/java8-functional-interface/" rel="alternate" type="text/html" title="Java8 Functional Interface" /><published>2022-04-07T00:00:00+09:00</published><updated>2022-04-07T01:50:00+09:00</updated><id>http://localhost:4000/java/java8-functional-interface</id><content type="html" xml:base="http://localhost:4000/java/java8-functional-interface/"><![CDATA[<h1 id="1-함수형-인터페이스-functional-interface">1. 함수형 인터페이스 (Functional Interface)</h1>
 
-&lt;h2 id=&quot;11-java-에서의-functional-interface&quot;&gt;1.1. Java 에서의 Functional Interface&lt;/h2&gt;
+<h2 id="11-java-에서의-functional-interface">1.1. Java 에서의 Functional Interface</h2>
 
-&lt;p&gt;SAM(Single Abstract Method) 인 Interface 는 모두 Functional Interface 이다. 즉, 추상메소드를 딱 하나만 가지고 있는 인터페이스를 의미한다. (Object 클래스로부터 상속 받은 메소드는 제외한다.)&lt;/p&gt;
+<p>SAM(Single Abstract Method) 인 Interface 는 모두 Functional Interface 이다. 즉, 추상메소드를 딱 하나만 가지고 있는 인터페이스를 의미한다. (Object 클래스로부터 상속 받은 메소드는 제외한다.)</p>
 
-&lt;p&gt;위 의 조건을 만족하는 인터페이스는 Functional Interface 로 인지되며, 람다 표현식에 적용이 가능하다.&lt;/p&gt;
+<p>위 의 조건을 만족하는 인터페이스는 Functional Interface 로 인지되며, 람다 표현식에 적용이 가능하다.</p>
 
-&lt;p&gt;만약 Functional Interface 임을 명시적으로 알려야 할 필요가 있을경우는 @FunctionalInterface 애노테이션을 사용한다.&lt;/p&gt;
+<p>만약 Functional Interface 임을 명시적으로 알려야 할 필요가 있을경우는 @FunctionalInterface 애노테이션을 사용한다.</p>
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@FunctionalInterface&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Blah&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@FunctionalInterface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Blah</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">test</span><span class="o">();</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
 
-&lt;h2 id=&quot;12-java-에서-기본-제공하는-잘-알려진-functional-interface&quot;&gt;1.2. Java 에서 기본 제공하는 잘 알려진 Functional Interface&lt;/h2&gt;
+<h2 id="12-java-에서-기본-제공하는-잘-알려진-functional-interface">1.2. Java 에서 기본 제공하는 잘 알려진 Functional Interface</h2>
 
-&lt;h3 id=&quot;functiont-r&quot;&gt;Function&amp;lt;T, R&amp;gt;&lt;/h3&gt;
+<h3 id="functiont-r">Function&lt;T, R&gt;</h3>
 
-&lt;p&gt;파라미터 1개, 리턴 1개 형태의 apply() 형태의 SAM 표현&lt;/p&gt;
+<p>파라미터 1개, 리턴 1개 형태의 apply() 형태의 SAM 표현</p>
 
-&lt;ul&gt;
-  &lt;li&gt;T : 입력값 타입&lt;/li&gt;
-  &lt;li&gt;R : 리턴값 타입&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>T : 입력값 타입</li>
+  <li>R : 리턴값 타입</li>
+</ul>
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;R&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">R</span> <span class="nf">apply</span><span class="o">(</span><span class="no">T</span> <span class="n">t</span><span class="o">);</span>
+</code></pre></div></div>
 
-&lt;p&gt;compose(), andThen() 으로 조합해서 사용 가능&lt;/p&gt;
+<p>compose(), andThen() 으로 조합해서 사용 가능</p>
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plus5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
-&lt;span class=&quot;nc&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mul2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Function</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">plus5</span> <span class="o">=</span> <span class="o">(</span><span class="n">value</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">5</span><span class="o">;</span> 
+<span class="nc">Function</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">mul2</span> <span class="o">=</span> <span class="o">(</span><span class="n">value</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">value</span> <span class="o">*</span> <span class="mi">2</span><span class="o">;</span> 
 
-&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plus5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;compose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mul2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// (3 * 2) + 5 &lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plus5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;andThen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mul2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// (3 + 5) * 2&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">plus5</span><span class="o">.</span><span class="na">compose</span><span class="o">(</span><span class="n">mul2</span><span class="o">).</span><span class="na">apply</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span> <span class="c1">// (3 * 2) + 5 </span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">plus5</span><span class="o">.</span><span class="na">andThen</span><span class="o">(</span><span class="n">mul2</span><span class="o">).</span><span class="na">apply</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span> <span class="c1">// (3 + 5) * 2</span>
+</code></pre></div></div>
 
-&lt;h3 id=&quot;bifunctiont-u-r&quot;&gt;BiFunction&amp;lt;T, U, R&amp;gt;&lt;/h3&gt;
+<h3 id="bifunctiont-u-r">BiFunction&lt;T, U, R&gt;</h3>
 
-&lt;p&gt;파라미터 2개, 리턴 1개 형태의 apply() 형태의 SAM 표현&lt;/p&gt;
+<p>파라미터 2개, 리턴 1개 형태의 apply() 형태의 SAM 표현</p>
 
-&lt;ul&gt;
-  &lt;li&gt;T : 첫 번째 입력값 타입&lt;/li&gt;
-  &lt;li&gt;U : 두 번째 입력값 타입&lt;/li&gt;
-  &lt;li&gt;R : 리턴 타입&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>T : 첫 번째 입력값 타입</li>
+  <li>U : 두 번째 입력값 타입</li>
+  <li>R : 리턴 타입</li>
+</ul>
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;R&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;U&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">R</span> <span class="nf">apply</span><span class="o">(</span><span class="no">T</span> <span class="n">t</span><span class="o">,</span> <span class="no">U</span> <span class="n">t</span><span class="o">);</span>
+</code></pre></div></div>
 
-&lt;p&gt;andThen 으로 Function&amp;lt;T, R&amp;gt; 조합 사용가능&lt;/p&gt;
+<p>andThen 으로 Function&lt;T, R&gt; 조합 사용가능</p>
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;BiFunction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
-&lt;span class=&quot;nc&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">BiFunction</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">func1</span> <span class="o">=</span> <span class="o">(</span><span class="n">val1</span><span class="o">,</span> <span class="n">val2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">val1</span> <span class="o">*</span> <span class="n">val2</span><span class="o">;</span>  
+<span class="nc">Function</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">func2</span> <span class="o">=</span> <span class="o">(</span><span class="n">val1</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">val1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>  
 
-&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 6&lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;andThen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;func2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 7&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">func1</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">)</span> <span class="o">);</span>  <span class="c1">// 6</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span> <span class="n">func1</span><span class="o">.</span><span class="na">andThen</span><span class="o">(</span><span class="n">func2</span><span class="o">).</span><span class="na">apply</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">));</span> <span class="c1">// 7</span>
+</code></pre></div></div>
 
-&lt;h3 id=&quot;consumer-t-&quot;&gt;Consumer&amp;lt; T &amp;gt;&lt;/h3&gt;
+<h3 id="consumer-t-">Consumer&lt; T &gt;</h3>
 
-&lt;p&gt;파라미터 1개, 리턴값은 없는 accept() 형태의 SAM 표현.
-파라미터를 전달받아 소비해버리는 이미지임&lt;/p&gt;
+<p>파라미터 1개, 리턴값은 없는 accept() 형태의 SAM 표현.
+파라미터를 전달받아 소비해버리는 이미지임</p>
 
-&lt;ul&gt;
-  &lt;li&gt;T : 입력 값 타입&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>T : 입력 값 타입</li>
+</ul>
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;accept&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="no">T</span> <span class="n">t</span><span class="o">);</span>
+</code></pre></div></div>
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Consumer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;supplier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;val : &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Consumer</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">supplier</span> <span class="o">=</span> <span class="o">(</span><span class="n">val</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"val : "</span> <span class="o">+</span> <span class="n">val</span><span class="o">);</span>  
 
-&lt;span class=&quot;n&quot;&gt;supplier&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;accept&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Jack&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// val : Jack&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<span class="n">supplier</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="s">"Jack"</span><span class="o">);</span>  <span class="c1">// val : Jack</span>
+</code></pre></div></div>
 
-&lt;h3 id=&quot;supplier-t-&quot;&gt;Supplier&amp;lt; T &amp;gt;&lt;/h3&gt;
+<h3 id="supplier-t-">Supplier&lt; T &gt;</h3>
 
-&lt;p&gt;파라미터는 없고, 리턴값만 존재하는 get() 형태의 SAM 표현
-무언가를 제공해주는 이미지임&lt;/p&gt;
+<p>파라미터는 없고, 리턴값만 존재하는 get() 형태의 SAM 표현
+무언가를 제공해주는 이미지임</p>
 
-&lt;ul&gt;
-  &lt;li&gt;T : 리턴 타입&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>T : 리턴 타입</li>
+</ul>
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">T</span> <span class="nf">get</span><span class="o">();</span>
+</code></pre></div></div>
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.function.Supplier&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.function.Supplier</span><span class="o">;</span>  
 
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;  
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>  
 
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>  
 
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt;  
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;  
+    <span class="kd">protected</span> <span class="nf">Foo</span><span class="o">()</span> <span class="o">{}</span>  
+    <span class="kd">public</span> <span class="nf">Foo</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span><span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span> <span class="o">}</span>  
 
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;  
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">;</span> <span class="o">}</span>  
 
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;  
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>  
 
-        &lt;span class=&quot;nc&quot;&gt;Supplier&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;supplier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;guest&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  
-        &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;supplier&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;  
-        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// guest&lt;/span&gt;
+        <span class="nc">Supplier</span><span class="o">&lt;</span><span class="nc">Foo</span><span class="o">&gt;</span> <span class="n">supplier</span> <span class="o">=</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">Foo</span><span class="o">(</span><span class="s">"guest"</span><span class="o">);</span>  
+        <span class="nc">Foo</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">supplier</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>  
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">foo</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>  <span class="c1">// guest</span>
 
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;  
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+    <span class="o">}</span>  
+<span class="o">}</span>
+</code></pre></div></div>
 
-&lt;h3 id=&quot;predicate-t-&quot;&gt;Predicate&amp;lt; T &amp;gt;&lt;/h3&gt;
+<h3 id="predicate-t-">Predicate&lt; T &gt;</h3>
 
-&lt;p&gt;파라미터는 1개, 리턴값은 boolean. test() 형태의 SAM 표현 
-무언가의 판단(true/false) 의 근거가 되는 값을 판정(test) 해 주는 이미지임.&lt;/p&gt;
+<p>파라미터는 1개, 리턴값은 boolean. test() 형태의 SAM 표현 
+무언가의 판단(true/false) 의 근거가 되는 값을 판정(test) 해 주는 이미지임.</p>
 
-&lt;ul&gt;
-  &lt;li&gt;T : 입력 값 타입&lt;/li&gt;
-&lt;/ul&gt;
+<ul>
+  <li>T : 입력 값 타입</li>
+</ul>
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">boolean</span> <span class="nf">test</span><span class="o">(</span><span class="no">T</span> <span class="n">t</span><span class="o">)</span>
+</code></pre></div></div>
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Predicate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pred1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
-&lt;span class=&quot;nc&quot;&gt;Predicate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pred2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Predicate</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">pred1</span> <span class="o">=</span> <span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">n</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">;</span> 
+<span class="nc">Predicate</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">pred2</span> <span class="o">=</span> <span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">;</span>
 
-&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pred1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pred2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false &lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pred1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pred2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true &lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pred1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true &lt;/span&gt;
-&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pred1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;negate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">pred1</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">pred2</span><span class="o">).</span><span class="na">test</span><span class="o">(</span><span class="mi">12</span><span class="o">));</span> <span class="c1">// false </span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">pred1</span><span class="o">.</span><span class="na">and</span><span class="o">(</span><span class="n">pred2</span><span class="o">).</span><span class="na">test</span><span class="o">(</span><span class="mi">8</span><span class="o">));</span> <span class="c1">// true </span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">pred1</span><span class="o">.</span><span class="na">test</span><span class="o">(</span><span class="mi">8</span><span class="o">));</span> <span class="c1">// true </span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">pred1</span><span class="o">.</span><span class="na">negate</span><span class="o">().</span><span class="na">test</span><span class="o">(</span><span class="mi">8</span><span class="o">));</span> <span class="c1">// false</span>
+</code></pre></div></div>
 
-&lt;blockquote&gt;
-  &lt;p&gt;그 외 BiFunction 에서의 모든 입,출력값 타입이 동일하다던가.. 등의 
-경우를 위해 여러가지 Functional Interface 를 제공하고있으며 해당 내용은 아래 링크 참조&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>그 외 BiFunction 에서의 모든 입,출력값 타입이 동일하다던가.. 등의 
+경우를 위해 여러가지 Functional Interface 를 제공하고있으며 해당 내용은 아래 링크 참조</p>
+</blockquote>
 
-&lt;hr /&gt;
+<hr />
 
-&lt;p&gt;https://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html#jls-9.8&lt;/p&gt;
+<p>https://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html#jls-9.8</p>
 
-&lt;p&gt;https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html&lt;/p&gt;</content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><category term="java" /><category term="java" /><category term="java8" /><summary type="html">1. 함수형 인터페이스 (Functional Interface)</summary></entry><entry><title type="html">버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)</title><link href="http://localhost:4000/version/sementic-versioning/" rel="alternate" type="text/html" title="버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)" /><published>2021-12-15T00:00:00+09:00</published><updated>2021-12-15T19:00:00+09:00</updated><id>http://localhost:4000/version/sementic-versioning</id><content type="html" xml:base="http://localhost:4000/version/sementic-versioning/">&lt;h2 id=&quot;1-버전-네이밍-기준&quot;&gt;1. 버전 네이밍 기준&lt;/h2&gt;
+<p>https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html</p>]]></content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><category term="java" /><category term="java" /><category term="java8" /><summary type="html"><![CDATA[Java8 - Functional Interface]]></summary></entry><entry><title type="html">버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)</title><link href="http://localhost:4000/version/sementic-versioning/" rel="alternate" type="text/html" title="버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)" /><published>2021-12-15T00:00:00+09:00</published><updated>2021-12-15T19:00:00+09:00</updated><id>http://localhost:4000/version/sementic-versioning</id><content type="html" xml:base="http://localhost:4000/version/sementic-versioning/"><![CDATA[<h2 id="1-버전-네이밍-기준">1. 버전 네이밍 기준</h2>
 
-&lt;p&gt;버전 관리에 대한 정의를 확인하던 중 Semantic Versioning 이라는 Spec 이 존재하는 것을 확인하여 요약을 하였다. 스펙이라고하면 거창할지 모르지만 결국 모든 스펙은 체계적으로 잘 구축해보자는 것이 목표이다. 이미 훌륭한 분이 &lt;a href=&quot;https://semver.org/&quot;&gt;Semantic Versioning&lt;/a&gt; 이라고하는 권고 스펙을 정의를 해두었다. &lt;a href=&quot;https://semver.org/&quot;&gt;Semantic Versioning&lt;/a&gt; 은 그라바타(Gravatars)의 창시자이자 깃헙(GitHub)의 공동창업자인 &lt;a href=&quot;https://tom.preston-werner.com&quot;&gt;톰 프레스턴-베르너&lt;/a&gt; 가 작성했으며, 흔히 오픈소스에서 사용하는 버전 체계의 기준이 되고 있다.&lt;/p&gt;
+<p>버전 관리에 대한 정의를 확인하던 중 Semantic Versioning 이라는 Spec 이 존재하는 것을 확인하여 요약을 하였다. 스펙이라고하면 거창할지 모르지만 결국 모든 스펙은 체계적으로 잘 구축해보자는 것이 목표이다. 이미 훌륭한 분이 <a href="https://semver.org/">Semantic Versioning</a> 이라고하는 권고 스펙을 정의를 해두었다. <a href="https://semver.org/">Semantic Versioning</a> 은 그라바타(Gravatars)의 창시자이자 깃헙(GitHub)의 공동창업자인 <a href="https://tom.preston-werner.com">톰 프레스턴-베르너</a> 가 작성했으며, 흔히 오픈소스에서 사용하는 버전 체계의 기준이 되고 있다.</p>
 
-&lt;h2 id=&quot;2-semantic-versioning-의-포맷&quot;&gt;2. Semantic Versioning 의 포맷&lt;/h2&gt;
+<h2 id="2-semantic-versioning-의-포맷">2. Semantic Versioning 의 포맷</h2>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2021/20211215_semver1.png&quot; alt=&quot;sementic versioning format&quot; /&gt;
+<p><img src="/assets/images/posts/2021/20211215_semver1.png" alt="sementic versioning format" />
 흔히 볼 수 있는 버전 표기의 형태는 위와 같다. x, y, z 는 증가하는 자연수(음이 아닌 정수)형태로 표시되며, 절대로 0이 앞에 붙어서는 안된다 (예: 1.0.03 과 같은 버전 표기는 하지 말아야한다). 
-그리고 위에서 표시된 &lt;strong&gt;x, y, z 는 각각 Major, Minor, Patch 의 버전을 의미한다.&lt;/strong&gt;&lt;/p&gt;
+그리고 위에서 표시된 <strong>x, y, z 는 각각 Major, Minor, Patch 의 버전을 의미한다.</strong></p>
 
-&lt;h3 id=&quot;21-major&quot;&gt;2.1. Major&lt;/h3&gt;
+<h3 id="21-major">2.1. Major</h3>
 
-&lt;p&gt;&lt;strong&gt;프로그램의 기능적 변경이 이전 버전과 호환되지 않을 경우 Major 버전을 증가시킨다.&lt;/strong&gt; Major 버전이 증가된 경우에는  Minor와 Patch 버전은 0으로 리셋시켜야 한다. 예를들어 현재 프로그램의 버전이 1.2.5 이고 다음 버전이 현재버전과 호환되지 않는 기능적 추가나 변경이 일어났다면 새버전은 2.0.0 이 되어야 한다.&lt;/p&gt;
+<p><strong>프로그램의 기능적 변경이 이전 버전과 호환되지 않을 경우 Major 버전을 증가시킨다.</strong> Major 버전이 증가된 경우에는  Minor와 Patch 버전은 0으로 리셋시켜야 한다. 예를들어 현재 프로그램의 버전이 1.2.5 이고 다음 버전이 현재버전과 호환되지 않는 기능적 추가나 변경이 일어났다면 새버전은 2.0.0 이 되어야 한다.</p>
 
-&lt;h3 id=&quot;22-minor&quot;&gt;2.2. Minor&lt;/h3&gt;
+<h3 id="22-minor">2.2. Minor</h3>
 
-&lt;p&gt;&lt;strong&gt;프로그램이 이전 버전과 호환에 문제가 없는 상태에서 프로그램의 기능적 변경이나 추가가 이루어질 경우 Minor 버전을 증가시킨다&lt;/strong&gt;. 예를들어 현재 프로그램의 버전이 1.2.5 이고 다음 버전이 현재버전과 호환되는 상태에서 기능적 추가나 변경이 일어났다면 새버전은 1.3.0 이 되어야 한다.&lt;/p&gt;
+<p><strong>프로그램이 이전 버전과 호환에 문제가 없는 상태에서 프로그램의 기능적 변경이나 추가가 이루어질 경우 Minor 버전을 증가시킨다</strong>. 예를들어 현재 프로그램의 버전이 1.2.5 이고 다음 버전이 현재버전과 호환되는 상태에서 기능적 추가나 변경이 일어났다면 새버전은 1.3.0 이 되어야 한다.</p>
 
-&lt;h3 id=&quot;23-patch&quot;&gt;2.3. Patch&lt;/h3&gt;
+<h3 id="23-patch">2.3. Patch</h3>
 
-&lt;p&gt;프로그램이 &lt;strong&gt;이전 버전과 호환에 문제가 없는 상태에서 Bug fix 등을 위한 변경이 이루어질 경우 Patch 버전을 증가&lt;/strong&gt;시킨다.&lt;/p&gt;
+<p>프로그램이 <strong>이전 버전과 호환에 문제가 없는 상태에서 Bug fix 등을 위한 변경이 이루어질 경우 Patch 버전을 증가</strong>시킨다.</p>
 
-&lt;h3 id=&quot;24-pre-release-와-build&quot;&gt;2.4. Pre-Release 와 Build&lt;/h3&gt;
+<h3 id="24-pre-release-와-build">2.4. Pre-Release 와 Build</h3>
 
-&lt;p&gt;Patch 버전 뒤에 프로그램의 Pre-release label 이나 Build number 같은 메타데이터를 위한 정보를 추가적으로 표시할 수 있다. 예를들어 &lt;em&gt;1.0.0-alpha.1&lt;/em&gt; 이라고 표시된 버전의 경우 라면, 1.0.0 버전의 정식 배포를 앞둔 버전이며 내부적으로 alpha.1 이라고 라벨링 했다는 것을 알 수 있다.&lt;/p&gt;
+<p>Patch 버전 뒤에 프로그램의 Pre-release label 이나 Build number 같은 메타데이터를 위한 정보를 추가적으로 표시할 수 있다. 예를들어 <em>1.0.0-alpha.1</em> 이라고 표시된 버전의 경우 라면, 1.0.0 버전의 정식 배포를 앞둔 버전이며 내부적으로 alpha.1 이라고 라벨링 했다는 것을 알 수 있다.</p>
 
-&lt;p&gt;Build metadata 는 Patch 버전 뒤에 더하기(+) 기호를 붙인 뒤에 마침표로 구분된 식별자를 덧붙여서 표현한다. 필요하다면 간단한 단어를 표기할 수 있다. (예 : 1.0.0-beta+exp.sha.5114f85)&lt;/p&gt;
+<p>Build metadata 는 Patch 버전 뒤에 더하기(+) 기호를 붙인 뒤에 마침표로 구분된 식별자를 덧붙여서 표현한다. 필요하다면 간단한 단어를 표기할 수 있다. (예 : 1.0.0-beta+exp.sha.5114f85)</p>
 
-&lt;p&gt;참고로 Build metadata 는 우선순위에 영향을 주지 않는다.&lt;/p&gt;
+<p>참고로 Build metadata 는 우선순위에 영향을 주지 않는다.</p>
 
-&lt;h2 id=&quot;semver-규칙을-확인-할-수-있는-정규-표현식&quot;&gt;SemVer 규칙을 확인 할 수 있는 정규 표현식&lt;/h2&gt;
+<h2 id="semver-규칙을-확인-할-수-있는-정규-표현식">SemVer 규칙을 확인 할 수 있는 정규 표현식</h2>
 
-&lt;p&gt;&lt;a href=&quot;https://semver.org/&quot;&gt;semver.org&lt;/a&gt; 의 하단부 FAQ 에 보면 Sementic Versioning 에서 권고하는 규칙에 맞는 버전포맷인지 확인 할 수 있는 정규표현식과 링크를 볼 수 있으므로 관심이 있다면 참고해보자.&lt;/p&gt;
+<p><a href="https://semver.org/">semver.org</a> 의 하단부 FAQ 에 보면 Sementic Versioning 에서 권고하는 규칙에 맞는 버전포맷인지 확인 할 수 있는 정규표현식과 링크를 볼 수 있으므로 관심이 있다면 참고해보자.</p>
 
-&lt;p&gt;Capture Group 명을 지원하는경우 (major, minor, patch…)
-&lt;a href=&quot;https://regex101.com/r/Ly7O1x/3/&quot;&gt;https://regex101.com/r/Ly7O1x/3/&lt;/a&gt;&lt;/p&gt;
+<p>Capture Group 명을 지원하는경우 (major, minor, patch…)
+<a href="https://regex101.com/r/Ly7O1x/3/">https://regex101.com/r/Ly7O1x/3/</a></p>
 
-&lt;pre&gt;&lt;code class=&quot;language-regex&quot;&gt;^(?P&amp;lt;major&amp;gt;0|[1-9]\d*)\.(?P&amp;lt;minor&amp;gt;0|[1-9]\d*)\.(?P&amp;lt;patch&amp;gt;0|[1-9]\d*)(?:-(?P&amp;lt;prerelease&amp;gt;(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P&amp;lt;buildmetadata&amp;gt;[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code class="language-regex">^(?P&lt;major&gt;0|[1-9]\d*)\.(?P&lt;minor&gt;0|[1-9]\d*)\.(?P&lt;patch&gt;0|[1-9]\d*)(?:-(?P&lt;prerelease&gt;(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P&lt;buildmetadata&gt;[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+</code></pre>
 
-&lt;p&gt;Capture Group 명을 지원하지 않는 경우&lt;/p&gt;
+<p>Capture Group 명을 지원하지 않는 경우</p>
 
-&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/vkijKf/1/&quot;&gt;https://regex101.com/r/vkijKf/1/&lt;/a&gt;&lt;/p&gt;
+<p><a href="https://regex101.com/r/vkijKf/1/">https://regex101.com/r/vkijKf/1/</a></p>
 
-&lt;pre&gt;&lt;code class=&quot;language-regex&quot;&gt;^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
-&lt;/code&gt;&lt;/pre&gt;
+<pre><code class="language-regex">^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+</code></pre>
 
-&lt;h2 id=&quot;참고자료&quot;&gt;참고자료&lt;/h2&gt;
+<h2 id="참고자료">참고자료</h2>
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://semver.org/&quot;&gt;https://semver.org/&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.baeldung.com/cs/semantic-versioning&quot;&gt;https://www.baeldung.com/cs/semantic-versioning&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><category term="version" /><category term="version" /><summary type="html">1. 버전 네이밍 기준</summary></entry><entry><title type="html">트랜잭션에서의 ACID</title><link href="http://localhost:4000/db/transaction_acid1/" rel="alternate" type="text/html" title="트랜잭션에서의 ACID" /><published>2021-12-09T00:00:00+09:00</published><updated>2021-12-09T12:00:00+09:00</updated><id>http://localhost:4000/db/transaction_acid1</id><content type="html" xml:base="http://localhost:4000/db/transaction_acid1/">&lt;h1 id=&quot;트랜잭션-acid&quot;&gt;트랜잭션 ACID&lt;/h1&gt;
+<ul>
+  <li>
+    <p><a href="https://semver.org/">https://semver.org/</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.baeldung.com/cs/semantic-versioning">https://www.baeldung.com/cs/semantic-versioning</a></p>
+  </li>
+</ul>]]></content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><category term="version" /><category term="version" /><summary type="html"><![CDATA[버전 표시도 스펙이 있을까? - Sementic Versioning (SemVer)]]></summary></entry><entry><title type="html">트랜잭션에서의 ACID</title><link href="http://localhost:4000/db/transaction_acid1/" rel="alternate" type="text/html" title="트랜잭션에서의 ACID" /><published>2021-12-09T00:00:00+09:00</published><updated>2021-12-09T12:00:00+09:00</updated><id>http://localhost:4000/db/transaction_acid1</id><content type="html" xml:base="http://localhost:4000/db/transaction_acid1/"><![CDATA[<h1 id="트랜잭션-acid">트랜잭션 ACID</h1>
 
-&lt;h3 id=&quot;트랜잭션-transaction&quot;&gt;트랜잭션 (Transaction)&lt;/h3&gt;
+<h3 id="트랜잭션-transaction">트랜잭션 (Transaction)</h3>
 
-&lt;p&gt;트랜잭션이란 질의(query)를 하나의 묶음으로 처리하도록하는 작업수행의 논리적 단위 입니다.&lt;/p&gt;
+<p>트랜잭션이란 질의(query)를 하나의 묶음으로 처리하도록하는 작업수행의 논리적 단위 입니다.</p>
 
-&lt;p&gt;트랜잭션은 ACID(원자성, 일관성, 독립성, 지속성)라는 특성을 만족해야합니다.&lt;/p&gt;
+<p>트랜잭션은 ACID(원자성, 일관성, 독립성, 지속성)라는 특성을 만족해야합니다.</p>
 
-&lt;h3 id=&quot;원자성-atomicity&quot;&gt;원자성 (Atomicity)&lt;/h3&gt;
+<h3 id="원자성-atomicity">원자성 (Atomicity)</h3>
 
-&lt;p&gt;트랜잭션의 작업이 부분적으로 실행되거나 중단되지 않음을 보장하는 특성입니다.&lt;/p&gt;
+<p>트랜잭션의 작업이 부분적으로 실행되거나 중단되지 않음을 보장하는 특성입니다.</p>
 
-&lt;p&gt;흔히 All or Nothing 이라고 부르는 개념으로 작업단위를 일부분만 실행하지 않고 실행이 되지 않는 상황이면 아무것도 실행되지 않아야하며 실행이 되었다면 실행되어야하는 영역(트랜잭션영역)은 모두 실행되어야 하는 특성입니다.&lt;/p&gt;
+<p>흔히 All or Nothing 이라고 부르는 개념으로 작업단위를 일부분만 실행하지 않고 실행이 되지 않는 상황이면 아무것도 실행되지 않아야하며 실행이 되었다면 실행되어야하는 영역(트랜잭션영역)은 모두 실행되어야 하는 특성입니다.</p>
 
-&lt;h3 id=&quot;일관성-consistency&quot;&gt;일관성 (Consistency)&lt;/h3&gt;
+<h3 id="일관성-consistency">일관성 (Consistency)</h3>
 
-&lt;p&gt;트랜잭션이 실행을 성공적으로 완료하면 언제나 일관성 있는 데이터 베이스를 유지하는 것을 의미합니다.&lt;/p&gt;
+<p>트랜잭션이 실행을 성공적으로 완료하면 언제나 일관성 있는 데이터 베이스를 유지하는 것을 의미합니다.</p>
 
-&lt;p&gt;일관성이라는 특성은 여러가지 상황에 대한 일관성을 함축적으로 표현하는 특성입니다.&lt;/p&gt;
+<p>일관성이라는 특성은 여러가지 상황에 대한 일관성을 함축적으로 표현하는 특성입니다.</p>
 
-&lt;p&gt;무결성 제약이 존재한다면 어느 트랜잭션은 무결성 제약이 적용되고 또 어떤 트랜잭션은 무결성제약이 적용되지 않고 하는 상황이 생기지 않아야하는 경우나, 고객의 잔고를 표현하는 데이터타입이 정수형이라면 예외적인 트랜잭션이 없이 모든 트랜잭션이 정수형으로 사용해야하는 경우 등 , 일반적으로 RDBMS 에서 언급되는 제약들은 모두 일관성 있게 적용되어야한다는 특성입니다.&lt;/p&gt;
+<p>무결성 제약이 존재한다면 어느 트랜잭션은 무결성 제약이 적용되고 또 어떤 트랜잭션은 무결성제약이 적용되지 않고 하는 상황이 생기지 않아야하는 경우나, 고객의 잔고를 표현하는 데이터타입이 정수형이라면 예외적인 트랜잭션이 없이 모든 트랜잭션이 정수형으로 사용해야하는 경우 등 , 일반적으로 RDBMS 에서 언급되는 제약들은 모두 일관성 있게 적용되어야한다는 특성입니다.</p>
 
-&lt;h3 id=&quot;독립성-isolation&quot;&gt;독립성 (Isolation)&lt;/h3&gt;
+<h3 id="독립성-isolation">독립성 (Isolation)</h3>
 
-&lt;p&gt;고립성, 격리성 이라고도 부르는 이 특성은 모든 트랜잭션은 다른 트랜잭션으로 부터 독립 되어야 한다는 특성입니다.&lt;/p&gt;
+<p>고립성, 격리성 이라고도 부르는 이 특성은 모든 트랜잭션은 다른 트랜잭션으로 부터 독립 되어야 한다는 특성입니다.</p>
 
-&lt;p&gt;트랜잭션 작업 수행 중에는 다른 트랜잭션에 영향을 주어서도 안되며, 다른 트랜잭션들에 의해서 간섭을 받아서도 안됩니다. 영향을 받게 된다면 전혀 다른 동작이 이루어 질 수 도 있습니다.&lt;/p&gt;
+<p>트랜잭션 작업 수행 중에는 다른 트랜잭션에 영향을 주어서도 안되며, 다른 트랜잭션들에 의해서 간섭을 받아서도 안됩니다. 영향을 받게 된다면 전혀 다른 동작이 이루어 질 수 도 있습니다.</p>
 
-&lt;h3 id=&quot;지속성-durability&quot;&gt;지속성 (Durability)&lt;/h3&gt;
+<h3 id="지속성-durability">지속성 (Durability)</h3>
 
-&lt;p&gt;성공적으로 수행된 트랜잭션은 영원히 반영되어야함을 의미합니다. 트랜잭션이 성공적으로 수행되었다면 해당 트랜잭셔에 대한 로그까지 남아야하며 만약 시스템 오류가 발생하더라도 해당 기록은 영구적으로 기록되어야 있어야 합니다. 즉, commit 이 완료되었다면 commit 도중 시스템 오류가 발생했더라도 작업 완료에 대한 기록은 남아있어야하며 이를 기반으로 데이터 자체는 정상적으로 유지되어야 합니다.&lt;/p&gt;</content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><category term="db" /><summary type="html">트랜잭션 ACID</summary></entry><entry><title type="html">miniDLNA 구동 후 접속 기기에서 파일이 보이지 않을경우</title><link href="http://localhost:4000/linux/Minidlna-troubleshooting1/" rel="alternate" type="text/html" title="miniDLNA 구동 후 접속 기기에서 파일이 보이지 않을경우" /><published>2021-10-27T00:00:00+09:00</published><updated>2021-10-28T02:00:00+09:00</updated><id>http://localhost:4000/linux/Minidlna-troubleshooting1</id><content type="html" xml:base="http://localhost:4000/linux/Minidlna-troubleshooting1/">&lt;h3 id=&quot;minidlna-&quot;&gt;miniDLNA ?&lt;/h3&gt;
+<p>성공적으로 수행된 트랜잭션은 영원히 반영되어야함을 의미합니다. 트랜잭션이 성공적으로 수행되었다면 해당 트랜잭셔에 대한 로그까지 남아야하며 만약 시스템 오류가 발생하더라도 해당 기록은 영구적으로 기록되어야 있어야 합니다. 즉, commit 이 완료되었다면 commit 도중 시스템 오류가 발생했더라도 작업 완료에 대한 기록은 남아있어야하며 이를 기반으로 데이터 자체는 정상적으로 유지되어야 합니다.</p>]]></content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><category term="db" /><summary type="html"><![CDATA[트랜잭션에서의 acid]]></summary></entry><entry><title type="html">miniDLNA 구동 후 접속 기기에서 파일이 보이지 않을경우</title><link href="http://localhost:4000/linux/Minidlna-troubleshooting1/" rel="alternate" type="text/html" title="miniDLNA 구동 후 접속 기기에서 파일이 보이지 않을경우" /><published>2021-10-27T00:00:00+09:00</published><updated>2021-10-28T02:00:00+09:00</updated><id>http://localhost:4000/linux/Minidlna-troubleshooting1</id><content type="html" xml:base="http://localhost:4000/linux/Minidlna-troubleshooting1/"><![CDATA[<h3 id="minidlna-">miniDLNA ?</h3>
 
-&lt;p&gt;손쉽게 미디어 서버를 구축할 수 있는 miniDLNA 라는 서버가 있으며, DLNA/UPnP 를 지원하는 스마트 TV 나 그에 대응되는 기기가 있을 경우 동일 네트워크 상에서 손쉽게 영상 플레이 등이 가능합니다.&lt;/p&gt;
+<p>손쉽게 미디어 서버를 구축할 수 있는 miniDLNA 라는 서버가 있으며, DLNA/UPnP 를 지원하는 스마트 TV 나 그에 대응되는 기기가 있을 경우 동일 네트워크 상에서 손쉽게 영상 플레이 등이 가능합니다.</p>
 
-&lt;p&gt;현재 이문서는 miniDLNA 설치를 다루지는 않으며, 파일이 보이지 않을경우의 트러블 슈팅만 언급하겠습니다.&lt;/p&gt;
+<p>현재 이문서는 miniDLNA 설치를 다루지는 않으며, 파일이 보이지 않을경우의 트러블 슈팅만 언급하겠습니다.</p>
 
-&lt;h3 id=&quot;파일이-보이지-않을-경우에는-status-확인&quot;&gt;파일이 보이지 않을 경우에는 status 확인&lt;/h3&gt;
+<h3 id="파일이-보이지-않을-경우에는-status-확인">파일이 보이지 않을 경우에는 status 확인</h3>
 
-&lt;p&gt;miniDLNA 명령어 옵션 중 Status  를 확인할 수 있는 status 옵션이 있습니다. 해당 옵션으로 실행 하면 miniDLNA 의 상태를 확인 할 수 있습니다. (service minidlna status)&lt;/p&gt;
+<p>miniDLNA 명령어 옵션 중 Status  를 확인할 수 있는 status 옵션이 있습니다. 해당 옵션으로 실행 하면 miniDLNA 의 상태를 확인 할 수 있습니다. (service minidlna status)</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2021/20211027_minidlna1.png&quot; alt=&quot;minidlna status&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/posts/2021/20211027_minidlna1.png" alt="minidlna status" /></p>
 
-&lt;p&gt;파일이 보이지 않을 경우에 고려해봐야할 점은 네트워크 설정, miniDLNA 구동 여부 등을 먼저 확인해봐야하지만 위의 경우에는 동영상 파일이 존재하는 위치의 디렉토리의 권한 접근 문제가 발생하여 에러가 발생하고 있는 중 입니다.&lt;/p&gt;
+<p>파일이 보이지 않을 경우에 고려해봐야할 점은 네트워크 설정, miniDLNA 구동 여부 등을 먼저 확인해봐야하지만 위의 경우에는 동영상 파일이 존재하는 위치의 디렉토리의 권한 접근 문제가 발생하여 에러가 발생하고 있는 중 입니다.</p>
 
-&lt;h3 id=&quot;권한-설정-변경&quot;&gt;권한 설정 변경&lt;/h3&gt;
+<h3 id="권한-설정-변경">권한 설정 변경</h3>
 
-&lt;p&gt;해당 디렉토리의 권한을 chmod 명령어로 변경해도 무방할 것으로 보이나, 여기서는 miniDLNA 데몬의 실행시 권한을 변경할 것 입니다.&lt;/p&gt;
+<p>해당 디렉토리의 권한을 chmod 명령어로 변경해도 무방할 것으로 보이나, 여기서는 miniDLNA 데몬의 실행시 권한을 변경할 것 입니다.</p>
 
-&lt;p&gt;흔히 포트나 영상파일이 존재하는 미디어 디렉토리를 설정하는 /etc/minidlna.conf 설정 파일 외에 miniDLNA 구동시 참조하는 초기 스크립트 관련 파일이 존재하는데 해당 파일에서 USER 와 GROUP 으로 표시되어있는 실행권한을 root 로 변경합니다.&lt;/p&gt;
+<p>흔히 포트나 영상파일이 존재하는 미디어 디렉토리를 설정하는 /etc/minidlna.conf 설정 파일 외에 miniDLNA 구동시 참조하는 초기 스크립트 관련 파일이 존재하는데 해당 파일에서 USER 와 GROUP 으로 표시되어있는 실행권한을 root 로 변경합니다.</p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;sudo vi /etc/minidlna&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>sudo vi /etc/minidlna</p>
+</blockquote>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2021/20211027_minidlna2.png&quot; alt=&quot;minidlna init config&quot; /&gt;&lt;/p&gt;
+<p><img src="/assets/images/posts/2021/20211027_minidlna2.png" alt="minidlna init config" /></p>
 
-&lt;p&gt;설정 변경 후 minidlna 을 재시작 한후 status 를 확인하면 다음과 같이 정상적으로 실행 중임을 알 수 있으며, 동일네트워크의 DLNA 을 접근할 수 있는 기기를 확인하면 미디어 디렉토리에 존재하는 동영상을 볼 수 있습니다.&lt;/p&gt;
+<p>설정 변경 후 minidlna 을 재시작 한후 status 를 확인하면 다음과 같이 정상적으로 실행 중임을 알 수 있으며, 동일네트워크의 DLNA 을 접근할 수 있는 기기를 확인하면 미디어 디렉토리에 존재하는 동영상을 볼 수 있습니다.</p>
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2021/20211027_minidlna3.png&quot; alt=&quot;minidlna result&quot; /&gt;&lt;/p&gt;</content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><category term="linux" /><summary type="html">miniDLNA ?</summary></entry><entry><title type="html">Start History</title><link href="http://localhost:4000/Start-History/" rel="alternate" type="text/html" title="Start History" /><published>2021-10-26T00:00:00+09:00</published><updated>2021-10-26T00:00:00+09:00</updated><id>http://localhost:4000/Start-History</id><content type="html" xml:base="http://localhost:4000/Start-History/">&lt;p&gt;Hello First Post!!!&lt;/p&gt;
+<p><img src="/assets/images/posts/2021/20211027_minidlna3.png" alt="minidlna result" /></p>]]></content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><category term="linux" /><summary type="html"><![CDATA[miniDLNA 구동 후 접속 기기에서 파일이 보이지 않을 경우 혹은 miniDLNA 상태가 에러인경우]]></summary></entry><entry><title type="html">Start History</title><link href="http://localhost:4000/Start-History/" rel="alternate" type="text/html" title="Start History" /><published>2021-10-26T00:00:00+09:00</published><updated>2021-10-26T00:00:00+09:00</updated><id>http://localhost:4000/Start-History</id><content type="html" xml:base="http://localhost:4000/Start-History/"><![CDATA[<p>Hello First Post!!!</p>
 
-&lt;p&gt;첫 번째 포스팅입니다.&lt;/p&gt;</content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><summary type="html">Hello First Post!!!</summary></entry></feed>
+<p>첫 번째 포스팅입니다.</p>]]></content><author><name>Jaejin Kim</name><email>jaejin.km@gmail.com</email></author><summary type="html"><![CDATA[Hello First Post!!!]]></summary></entry></feed>
