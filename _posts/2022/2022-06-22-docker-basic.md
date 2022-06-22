@@ -112,7 +112,7 @@ build 완료후 image-id 를 확인 할 수 있는데  `run` 명령어 실행시
 
 
 ```shell
-docker run -p 3000:3000 -it {docker-id}
+docker run -p 8080:8080 -it {docker-id}
 ```
 
 만약 표준입력으로 입력을 받아야하는 상황에서는 위와 같이 interfactive , tty 옵션을 주어 실행할 수 있습니다.
@@ -148,7 +148,7 @@ docker start -i {image-name/container-id}
 ## 1.5. Attach
 
 ```shell
-docker run -p 8000:8000 -d {image-id or reponame}
+docker run -p 8080:8080 -d {image-id or reponame}
 ```
 
 위와 같이 run 으로 컨테이를 실행시킬때 `-d` 옵션을 사용하여 명시적으로 detach 모드로 실행하거나
